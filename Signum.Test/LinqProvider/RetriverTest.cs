@@ -97,7 +97,6 @@ namespace Signum.Test.LinqProvider
                 throw new AssertFailedException("Some non-retrived elements: {0}".Formato(problematic.ToString(", ")));  
         }
 
-
         [TestMethod]
         public void RetrieveWithMListCount()
         {

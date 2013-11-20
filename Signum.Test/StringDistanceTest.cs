@@ -18,11 +18,11 @@ namespace Signum.Test
         public void ResetLazy()
         {
             int i = 0;
-            ResetLazy<string> val = new ResetLazy<string>(() => "hola" + i++);
+            Lazy<string> val = new Lazy<string>(()=>"hola" + i++, LazyThreadSafetyMode.PublicationOnly);
 
-            val.Reset(); //reset before initialized
+            val.ResetPublicationOnly(); //reset before initialized
             var str1 = val.Value;
-            val.Reset(); //reset after initialized
+            val.ResetPublicationOnly(); //reset after initialized
 
             var str2 = val.Value;
 

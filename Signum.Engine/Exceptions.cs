@@ -10,7 +10,7 @@ using Signum.Engine.Properties;
 using Signum.Engine.Maps;
 using Signum.Entities;
 using Signum.Entities.Reflection;
-using System.Data.SqlServerCe;
+//using System.Data.SqlServerCe;
 
 namespace Signum.Engine.Exceptions
 {

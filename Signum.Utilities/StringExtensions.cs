@@ -493,5 +493,28 @@ namespace Signum.Utilities
                 result++;
             }
         }
+
+        static InvalidOperationException NotFound(string str, char separator)
+        {
+            return new InvalidOperationException("Separator '{0}' not found on {1}".Formato(separator, str));
+        }
+
+        public static string Before(this string str, char separator)
+        {
+            int index = str.IndexOf(separator);
+            if (index == -1)
+                throw NotFound(str, separator);
+
+            return str.Substring(0, index);
+        }
+
+        public static string After(this string str, char separator)
+        {
+            int index = str.IndexOf(separator);
+            if (index == -1)
+                throw NotFound(str, separator);
+
+            return str.Substring(index + 1);
+        }
     }
 }

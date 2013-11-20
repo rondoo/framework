@@ -27,6 +27,10 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SccProjectName>%24/CIQS.root/Development/Sprint 19/Framework/Signum.Web</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://tfs2010-dhd:8080/tfs/paleiskade</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -128,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RouteCollectionExtensions.cs" />
     <Compile Include="Signum\Controllers\JsonConverters.cs" />
     <Compile Include="Signum\Controllers\ResourcesController.cs" />
     <Compile Include="Signum\Controllers\ModelBinders.cs" />
@@ -164,11 +169,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Pagination.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Signum\Views\PopupCancelControl.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PopupCancelControl.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Signum\Views\PopupControl.generated.cs">
       <AutoGen>True</AutoGen>

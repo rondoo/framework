@@ -71,13 +71,11 @@
     <Compile Include="LinqProvider\Assert2.cs" />
     <Compile Include="Entities.cs" />
     <Compile Include="LinqProvider\AllAnyContainsTest.cs" />
-    <Compile Include="LinqProvider\InDBTest.cs" />
     <Compile Include="LinqProvider\RetriverTest.cs" />
     <Compile Include="LinqProvider\SelectSortCirtuitTest.cs" />
     <Compile Include="LinqProvider\SelectNestedTest.cs" />
     <Compile Include="LinqProvider\DistinctTest.cs" />
     <Compile Include="LinqProvider\SelectManyTest.cs" />
-    <Compile Include="LinqProvider\SingleFirstTest.cs" />
     <Compile Include="LinqProvider\UpdateDeleteTest.cs" />
     <Compile Include="LinqProvider\SqlFunctionsTest.cs" />
     <Compile Include="LinqProvider\TakeSkipTest.cs" />

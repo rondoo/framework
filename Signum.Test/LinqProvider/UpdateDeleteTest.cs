@@ -228,18 +228,6 @@ namespace Signum.Test.LinqProviderUpdateDelete
         }
 
         [TestMethod]
-        public void UpdateFieSetReadonly()
-        {
-            using (Transaction tr = new Transaction())
-            {
-                LabelDN label = Database.Query<LabelDN>().FirstEx();
-
-                int count = Database.Query<AlbumDN>().UnsafeUpdate(a => new AlbumDN().SetReadonly(al => al.Label, label));
-                //tr.Commit();
-            }
-        }
-
-        [TestMethod]
         public void UpdateFieToLite()
         {
             using (Transaction tr = new Transaction())
@@ -344,23 +332,9 @@ namespace Signum.Test.LinqProviderUpdateDelete
                 int count = Database.Query<AlbumDN>().UnsafeUpdate(a => new AlbumDN { BonusTrack = null });
                 //tr.Commit();
             }
-        }
-
-
-        [TestMethod]
-        public void UpdateWith()
-        {
-            using (Transaction tr = new Transaction())
-            {
-                int count = Database.Query<AlbumDN>()
-                    .Select(a => new { a.Label, Album = a })
-                    .UnsafeUpdatePart(a => a.Label, a => new LabelDN { Name = a.Label.Name + "/" + a.Album.Id });
-
-                var list = Database.Query<LabelDN>().Select(a => a.Name);
-                //tr.Commit();
-            }
 
         }
+
 
         [TestMethod]
         public void UpdateMListLite()

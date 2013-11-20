@@ -37,6 +37,10 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>%24/CIQS.root/Development/Sprint 19/Framework/Signum.Engine</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://tfs2010-dhd:8080/tfs/paleiskade</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,19 +65,26 @@
     <OutputPath>bin\Partial\</OutputPath>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StagingWindows|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\StagingWindows\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Types.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
@@ -95,7 +106,6 @@
     <Compile Include="Connection\Connector.cs" />
     <Compile Include="Connection\Executor.cs" />
     <Compile Include="Connection\FieldReader.cs" />
-    <Compile Include="Connection\SqlCeConnector.cs" />
     <Compile Include="Connection\SqlConnector.cs" />
     <Compile Include="Connection\Transaction.cs" />
     <Compile Include="Connection\UserConnections.cs" />
@@ -103,7 +113,9 @@
     <Compile Include="DynamicQuery\DynamicQuery.cs" />
     <Compile Include="DynamicQuery\ColumnDescriptionFactory.cs" />
     <Compile Include="DynamicQuery\ManualDynamicQuery.cs" />
-    <Compile Include="Engine\ProgressExtensions.cs" />
+    <Compile Include="Engine\ProgressExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Engine\SchemaGenerator.cs" />
     <Compile Include="Engine\SqlUtils.cs" />
     <Compile Include="Exceptions.cs" />
@@ -139,6 +151,9 @@
     <Compile Include="Linq\ExpressionVisitor\QueryFormatter.cs" />
     <Compile Include="Linq\ExpressionVisitor\RedundantSubqueryRemover.cs" />
     <Compile Include="Linq\ExpressionVisitor\Replacer.cs" />
+    <Compile Include="Linq\ExpressionVisitor\ScalarSubqueryRewriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Linq\ExpressionVisitor\SmartEqualizer.cs" />
     <Compile Include="Linq\ExpressionVisitor\SubqueryRemover.cs" />
     <Compile Include="Linq\ExpressionVisitor\TranslatorBuilder.cs" />
@@ -149,7 +164,6 @@
     <Compile Include="Linq\Meta\MetaExpression.cs" />
     <Compile Include="Linq\ProjectionReader.cs" />
     <Compile Include="Linq\Meta\MetadataVisitor.cs" />
-    <Compile Include="Linq\ExpressionVisitor\ScalarSubqueryRewriter.cs" />
     <Compile Include="Linq\TranslateResult.cs" />
     <Compile Include="Engine\Saver.cs">
       <SubType>Code</SubType>
